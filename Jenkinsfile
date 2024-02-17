@@ -6,7 +6,6 @@ pipeline {
             steps {
                 echo "Building..."
                 sh 'node --version'
-                hello.html
             }
         }
     }
