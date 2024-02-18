@@ -1,7 +1,13 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent any
+    agent { docker { image 'node:20.11.1-alpine3.19' } }
     stages {
+        stage('build') {
+            steps {
+                echo "Building..."
+                sh 'node --version'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'echo "Fail!"; exit 1'
